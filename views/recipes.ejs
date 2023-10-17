@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1><%= recipe.title %></h1>
+        <img src="<%= recipe.image %>" alt="<%= recipe.title %>"/>
+        <h2>Ingredients</h2>
+        <ul>
+            <% recipe.extendedIngredients.forEach(ingredient => {%>
+                <li><%= ingredient.original %></li>
+
+            <% }) %>
+        </ul>
+        <h2>Instruction</h2>
+        <ol>
+            <%= recipe.analyzedInstructions[0].steps.forEach(step => {%>
+                <li> <%= step.step %></li>
+            
+            
+            
+            <% }) %>
+        </ol>
+
+        <a href="/views/recipes.ejs">Back</a>
+    </div>
+</body>
+</html>
